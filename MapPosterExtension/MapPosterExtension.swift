@@ -7,47 +7,51 @@
 
 import Foundation
 import ExtensionFoundation
-import PosterKit
+import ExtensionKit
+import PosterKitHelper
+import SwiftUI
 
-/// The AppExtensionConfiguration that will be provided by this extension.
-/// This is typically defined by the extension host in a framework.
-struct ExampleConfiguration<E:ExampleExtension>: AppExtensionConfiguration {
-    
-    let appExtension: E
-    
-    init(_ appExtension: E) {
-        self.appExtension = appExtension
+fileprivate final class UpdatingController: NSObject, PRUpdatingDelegate, PRRenderingDelegate {
+    func updateConfiguration(_ arg1: Any!, sessionInfo arg2: Any!, completion arg3: Any!) {
+        
     }
     
-    /// Determine whether to accept the XPC connection from the host.
-    func accept(connection: NSXPCConnection) -> Bool {
-//        PosterKit.PRRenderingDelegate
-        print(PRRenderingConfiguration.self)
-        PRRenderingConfiguration {
-//            Foo()
-            fatalError()
-        }
-//        print(PRRenderingDelegate.self)
-        // TODO: Configure the XPC connection and return true
-        return false
+    func renderer(_ arg1: Any!, didInitializeWithEnvironment arg2: Any!) {
+        
     }
-}
-
-/// The AppExtension protocol to which this extension will conform.
-/// This is typically defined by the extension host in a framework.
-protocol ExampleExtension : AppExtension { }
-
-extension ExampleExtension {
-    @MainActor
-    var configuration: ExampleConfiguration<some ExampleExtension> {
-        // Return your extension's configuration upon request.
-        return ExampleConfiguration(self)
+    
+    func renderer(_ arg1: Any!, didUpdateEnvironment arg2: Any!, withTransition arg3: Any!) {
+        
+    }
+    
+    func rendererDidInvalidate(_ arg1: Any!) {
+        
     }
 }
 
 @main
-class MapPosterExtension: ExampleExtension {
-    required init() {
-        // Initialize your extension here.
+@MainActor
+final class MapPosterExtension: _AppExtension {
+    private let updatingController: UpdatingController
+    private let providerConfiguration: PRProviderConfiguration<[PRRenderingConfiguration]>
+    private let renderingConfiguration: PRRenderingConfiguration
+    
+    var body: some _Scene { providerConfiguration }
+    
+    init() {
+        let updatingController = UpdatingController()
+        
+        let renderingConfiguration: PRRenderingConfiguration = .init {
+            updatingController
+        }
+        
+        self.updatingController = updatingController
+        providerConfiguration = .init(updatingDelegate: PRUpdater(delegate: updatingController), content: {
+            [renderingConfiguration]
+        })
+        self.renderingConfiguration = renderingConfiguration
+        
+        // PRRenderer이 나올 것 같음. 여기서 View 접근해서 addSubview:
+        _ = renderingConfiguration.sceneDelegate
     }
 }

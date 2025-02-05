@@ -1,0 +1,250 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -library-level api -module-name PosterKitHelper
+import Swift
+import Foundation
+import UIKit
+import SwiftUI
+import CoreGraphics
+import _Concurrency
+import ExtensionKit
+import ExtensionFoundation
+@_exported import PosterKitHelper
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "PosterKit", iOS 16.0)
+open class PRRenderingConfiguration: PosterKitHelper._SceneConfiguration {
+    @_silgen_name("$s9PosterKit24PRRenderingConfigurationCyACSo0C8Delegate_pyccfC")
+    public init(_ block: () -> PosterKitHelper.PRRenderingDelegate)
+    open var sceneDelegate: UIKit.UISceneDelegate { get }
+    public final var role: PosterKitHelper._Role { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "PosterKit", iOS 16.0)
+open class PRProviderConfiguration<T>: PosterKitHelper.PRProviderConfigurationProtocol {
+    public final var content: PosterKitHelper._SceneConfigurationGroup { get }
+    @_silgen_name("$s9PosterKit23PRProviderConfigurationC16updatingDelegate7contentACyxGSo010PRUpdatingF0_p_xyctcfC")
+    public init(updatingDelegate: PosterKitHelper.PRUpdatingDelegate, content: () -> T)
+    @_silgen_name("$s9PosterKit23PRProviderConfigurationC7contentACyxGxyc_tcfC")
+    public init(content: () -> T)
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "PosterKit", iOS 16.0)
+public protocol PRProviderConfigurationProtocol: PosterKitHelper._AppExtensionConfiguration, PosterKitHelper._ConnectionHandler, PosterKitHelper._SceneConfigurationProviding {}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@_typeEraser(_AnySceneConfiguration)
+public protocol _SceneConfiguration {
+    var sceneDelegate: UIKit.UISceneDelegate { get }
+    var role: PosterKitHelper._Role { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _AnySceneConfiguration: PosterKitHelper._SceneConfiguration {
+    public init<T>(erasing: T) where T: PosterKitHelper._SceneConfiguration
+    public var sceneDelegate: UIKit.UISceneDelegate { get }
+    public var role: PosterKitHelper._Role { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _EmptySceneConfiguration: PosterKitHelper._SceneConfiguration {
+    public var sceneDelegate: UIKit.UISceneDelegate { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public struct _ConfigurationScene: PosterKitHelper._Scene, PosterKitHelper._ViewConfigurationProviding {
+    public init(main: PosterKitHelper._Scene, scenes: [PosterKitHelper._ContentViewScene])
+    public init(scenes: [PosterKitHelper._ContentViewScene])
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+    public var content: PosterKitHelper._ViewConfigurationGroup { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public struct _ViewConfigurationGroup {
+    public init<T>(content: () -> T) where T: PosterKitHelper._ViewConfiguration
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public struct _SceneConfigurationGroup {
+    let content: () -> [PosterKitHelper._AnySceneConfiguration]
+    @_silgen_name("$s12ExtensionKit24_SceneConfigurationGroupV7contentACxyc_tcAA01_cD0RzlufC")
+    public init<T>(content: () -> T) where T: PosterKitHelper._SceneConfiguration
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@_typeEraser(_AnyViewConfiguration)
+@preconcurrency @_Concurrency.MainActor public protocol _ViewConfiguration {
+    associatedtype ViewContent
+    var role: PosterKitHelper._Role { get }
+    var view: ViewContent { get }
+    // func consume(initializationParameters: PosterKitHelper._InitializationParameters) -> ()
+}
+extension PosterKitHelper._ViewConfiguration {
+    var view: ViewContent { get }
+    // func consume(initializationParameters: PosterKitHelper._InitializationParameters) -> ()
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _AnyViewConfiguration: PosterKitHelper._ViewConfiguration, PosterKitHelper._ConnectionHandler {
+    public init<T>(erasing: T) where T: PosterKitHelper._ViewConfiguration
+    public var role: PosterKitHelper._Role { get }
+    public var view: Never { get }
+    // public func consume(initializationParameters: PosterKitHelper._InitializationParameters) -> ()
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor @_functionBuilder public struct _ViewConfigurationBuilder {
+    @_alwaysEmitIntoClient @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> [PosterKitHelper._AnyViewConfiguration] where Content : PosterKitHelper._ViewConfiguration
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public protocol _ViewConfigurationProviding {
+    var content: PosterKitHelper._ViewConfigurationGroup { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public protocol _SceneConfigurationProviding {
+    var content: PosterKitHelper._SceneConfigurationGroup { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _Role: Swift.Hashable, Swift.RawRepresentable, Swift.CustomStringConvertible, Swift.ExpressibleByStringLiteral {
+  public let rawValue: Swift.String
+  public init(rawValue: Swift.String)
+  public init(stringLiteral: Swift.String)
+  public typealias ExtendedGraphemeClusterLiteralType = Swift.String
+  public typealias RawValue = Swift.String
+  public typealias StringLiteralType = Swift.String
+  public typealias UnicodeScalarLiteralType = Swift.String
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _ContentViewScene {
+    public init<T>(_: () -> T) where T: PosterKitHelper._ViewScene
+    public init<T>(role: PosterKitHelper._Role, _: () -> T) where T: PosterKitHelper._ViewScene
+    public init<T>(id: Swift.String, _: () -> T) where T: PosterKitHelper._ViewScene
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@_typeEraser(_AnyViewScene)
+public protocol _ViewScene {
+    associatedtype Body: SwiftUI.View
+    var body: Body { get }
+    func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+    // func consume(initializationParameters: PosterKitHelper._InitializationParameters) -> ()
+}
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+extension PosterKitHelper._ViewScene {
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+    // func consume(initializationParameters: PosterKitHelper._InitializationParameters) -> ()
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _AnyViewScene: PosterKitHelper._ViewScene {
+    public init<T>(erasing: T) where T: PosterKitHelper._ViewScene
+    public var body: Never { get }
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+public struct _EmptyViewScene: PosterKitHelper._ViewScene {
+    public init()
+    public var body: Never { get }
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+public protocol _ConnectionHandler {
+    func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+extension PosterKitHelper._ConnectionHandler {
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public protocol _AppExtension {
+    associatedtype Body: PosterKitHelper._Scene
+    var body: Body { get }
+    init()
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+extension PosterKitHelper._AppExtension {
+  @preconcurrency @_Concurrency.MainActor public static func main() throws
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+extension PosterKitHelper._AppExtension where Body: PosterKitHelper._ViewConfigurationProviding {
+  @preconcurrency @_Concurrency.MainActor public static func main() throws
+}
+@available(macOS 13.0, iOS 16.0, watchOS 9.0, tvOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+extension PosterKitHelper._AppExtension where Body: PosterKitHelper._SceneConfigurationProviding {
+  @preconcurrency @_Concurrency.MainActor public static func main() throws
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+public protocol _Scene {
+    func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+extension PosterKitHelper._Scene {
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor @_functionBuilder public struct _SceneBuilder {
+    @_alwaysEmitIntoClient @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> some PosterKitHelper._Scene where Content : PosterKitHelper._Scene {
+        return content
+    }
+}
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+extension _SceneBuilder {
+    @_Concurrency.MainActor @preconcurrency public static func buildBlock(_: PosterKitHelper._ContentViewScene...) -> PosterKitHelper._ConfigurationScene
+    @_Concurrency.MainActor @preconcurrency public static func buildBlock(_: PosterKitHelper._Scene, _: PosterKitHelper._ContentViewScene...) -> PosterKitHelper._ConfigurationScene
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public struct _EmptyScene: PosterKitHelper._Scene {
+    public func shouldAccept(connection: Foundation.NSXPCConnection) -> Swift.Bool
+    public init()
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+public protocol _AppExtensionConfiguration: PosterKitHelper._Scene {}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionFoundation", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor @_functionBuilder public struct _AppExtensionConfigurationBuilder {
+    @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> some PosterKitHelper._AppExtensionConfiguration where Content : PosterKitHelper._AppExtensionConfiguration
+}

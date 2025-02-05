@@ -1,9 +1,5 @@
-framework module PosterKit {
+framework module PosterKitHelper {
     umbrella header "PosterKit.h"
     export *
     module * { export * }
-}
-
-module PosterKit.Swift {
-  requires objc
 }

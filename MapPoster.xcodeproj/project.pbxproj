@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4F0856022D5365E600EE68E2 /* MapPosterExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
-		4F08560B2D5368E700EE68E2 /* PosterKit.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F08560A2D5368E700EE68E2 /* PosterKit.xcframework */; };
+		4F2F796B2D53BEE100C2756C /* PosterKitHelper.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F2F796A2D53BEE100C2756C /* PosterKitHelper.xcframework */; };
+		4F2F797D2D53C24500C2756C /* MapPosterExtension.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = 4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4F0856002D5365E600EE68E2 /* PBXContainerItemProxy */ = {
+		4F2F797E2D53C24500C2756C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4F0855DE2D53638900EE68E2 /* Project object */;
 			proxyType = 1;
@@ -22,13 +22,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		4F0856072D5365E600EE68E2 /* Embed ExtensionKit Extensions */ = {
+		4F2F79802D53C24500C2756C /* Embed ExtensionKit Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
-			dstSubfolderSpec = 16;
+			dstPath = "";
+			dstSubfolderSpec = 13;
 			files = (
-				4F0856022D5365E600EE68E2 /* MapPosterExtension.appex in Embed ExtensionKit Extensions */,
+				4F2F797D2D53C24500C2756C /* MapPosterExtension.appex in Embed ExtensionKit Extensions */,
 			);
 			name = "Embed ExtensionKit Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		4F0855E62D53638900EE68E2 /* MapPoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = MapPosterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		4F08560A2D5368E700EE68E2 /* PosterKit.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PosterKit.xcframework; sourceTree = "<group>"; };
+		4F2F796A2D53BEE100C2756C /* PosterKitHelper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PosterKitHelper.xcframework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -79,7 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F08560B2D5368E700EE68E2 /* PosterKit.xcframework in Frameworks */,
+				4F2F796B2D53BEE100C2756C /* PosterKitHelper.xcframework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,7 +108,7 @@
 		4F0856092D5368E700EE68E2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F08560A2D5368E700EE68E2 /* PosterKit.xcframework */,
+				4F2F796A2D53BEE100C2756C /* PosterKitHelper.xcframework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,12 +123,12 @@
 				4F0855E22D53638900EE68E2 /* Sources */,
 				4F0855E32D53638900EE68E2 /* Frameworks */,
 				4F0855E42D53638900EE68E2 /* Resources */,
-				4F0856072D5365E600EE68E2 /* Embed ExtensionKit Extensions */,
+				4F2F79802D53C24500C2756C /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				4F0856012D5365E600EE68E2 /* PBXTargetDependency */,
+				4F2F797F2D53C24500C2756C /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				4F0855E82D53638900EE68E2 /* MapPoster */,
@@ -235,10 +235,10 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4F0856012D5365E600EE68E2 /* PBXTargetDependency */ = {
+		4F2F797F2D53C24500C2756C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4F0855FA2D5365E600EE68E2 /* MapPosterExtension */;
-			targetProxy = 4F0856002D5365E600EE68E2 /* PBXContainerItemProxy */;
+			targetProxy = 4F2F797E2D53C24500C2756C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -369,10 +369,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MapPoster/MapPoster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MapPoster/Preview Content\"";
-				DEVELOPMENT_TEAM = P53D29U9LJ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -397,10 +398,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MapPoster/MapPoster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MapPoster/Preview Content\"";
-				DEVELOPMENT_TEAM = P53D29U9LJ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -426,7 +428,7 @@
 				CODE_SIGN_ENTITLEMENTS = MapPosterExtension/MapPosterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P53D29U9LJ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapPosterExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MapPosterExtension;
@@ -451,7 +453,7 @@
 				CODE_SIGN_ENTITLEMENTS = MapPosterExtension/MapPosterExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = P53D29U9LJ;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = MapPosterExtension/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MapPosterExtension;

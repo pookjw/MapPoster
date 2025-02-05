@@ -16,5 +16,9 @@
 	<array>
 		<string>PRPosterRoleLockScreen</string>
 	</array>
+	<key>PRWantsLocation</key>
+	<true/>
+	<key>UIApplicationShowsViewsWhileLocked</key>
+	<true/>
 </dict>
 </plist>

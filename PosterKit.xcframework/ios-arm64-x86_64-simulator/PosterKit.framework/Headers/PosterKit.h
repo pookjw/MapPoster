@@ -1,1 +1,0 @@
-#import <PosterKit/PRRenderingDelegate.h>
