@@ -1,0 +1,18 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.0.3 effective-5.10 (swiftlang-6.0.3.1.6 clang-1600.0.30.1)
+// swift-module-flags: -target arm64-apple-ios18.2-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name PosterKit
+import Swift
+import Foundation
+import UIKit
+import CoreGraphics
+import _Concurrency
+import ExtensionKit
+import ExtensionFoundation
+@_exported import PosterKit
+
+public final class PRRenderingConfiguration {
+    public init(_ block: () -> PosterKit.PRRenderingDelegate)
+}
+public final class VerticalLabel {
+    public init()
+}
