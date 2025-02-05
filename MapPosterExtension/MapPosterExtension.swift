@@ -52,6 +52,7 @@ final class MapPosterExtension: _AppExtension {
         self.renderingConfiguration = renderingConfiguration
         
         // PRRenderer이 나올 것 같음. 여기서 View 접근해서 addSubview:
+        // /System/Library/PrivateFrameworks/PosterBoard.framework/PosterBoard에 Extension 하드코딩 되어 있음
         _ = renderingConfiguration.sceneDelegate
     }
 }
