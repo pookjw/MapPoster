@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
    LastUpgradeVersion = "1620"
-   wasCreatedForAppExtension = "YES"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,23 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F0855FA2D5365E600EE68E2"
-               BuildableName = "MapPosterExtension.appex"
-               BlueprintName = "MapPosterExtension"
-               ReferencedContainer = "container:MapPoster.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4F0855E52D53638900EE68E2"
-               BuildableName = "MapPoster.app"
-               BlueprintName = "MapPoster"
+               BlueprintIdentifier = "4F2F79AA2D5485A200C2756C"
+               BuildableName = "PosterBoardTweak.framework"
+               BlueprintName = "PosterBoardTweak"
                ReferencedContainer = "container:MapPoster.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -59,34 +44,22 @@
          runnableDebuggingMode = "0"
          FilePath = "/Library/Developer/CoreSimulator/Volumes/iOS_22C150/Library/Developer/CoreSimulator/Profiles/Runtimes/iOS 18.2.simruntime/Contents/Resources/RuntimeRoot/System/Library/PrivateFrameworks/PosterBoard.framework/PosterBoard">
       </PathRunnable>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F0855E52D53638900EE68E2"
-            BuildableName = "MapPoster.app"
-            BlueprintName = "MapPoster"
-            ReferencedContainer = "container:MapPoster.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      debugDocumentVersioning = "YES"
-      askForAppToLaunch = "Yes"
-      launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      debugDocumentVersioning = "YES">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "4F0855E52D53638900EE68E2"
-            BuildableName = "MapPoster.app"
-            BlueprintName = "MapPoster"
+            BlueprintIdentifier = "4F2F79AA2D5485A200C2756C"
+            BuildableName = "PosterBoardTweak.framework"
+            BlueprintName = "PosterBoardTweak"
             ReferencedContainer = "container:MapPoster.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

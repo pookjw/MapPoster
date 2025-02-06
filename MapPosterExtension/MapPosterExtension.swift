@@ -9,50 +9,52 @@ import Foundation
 import ExtensionFoundation
 import ExtensionKit
 import PosterKitHelper
-import SwiftUI
 
-fileprivate final class UpdatingController: NSObject, PRUpdatingDelegate, PRRenderingDelegate {
-    func updateConfiguration(_ arg1: Any!, sessionInfo arg2: Any!, completion arg3: Any!) {
-        
-    }
-    
-    func renderer(_ arg1: Any!, didInitializeWithEnvironment arg2: Any!) {
-        
-    }
-    
-    func renderer(_ arg1: Any!, didUpdateEnvironment arg2: Any!, withTransition arg3: Any!) {
-        
-    }
-    
-    func rendererDidInvalidate(_ arg1: Any!) {
-        
-    }
-}
+/*
+ PREditingConfiguration
+ PRRenderingConfiguration
+ PRProviderConfiguration
+ _AppExtension
+ _SceneBuilder
+ _AnySceneConfiguration
+ */
 
 @main
 @MainActor
 final class MapPosterExtension: _AppExtension {
-    private let updatingController: UpdatingController
     private let providerConfiguration: PRProviderConfiguration<[PRRenderingConfiguration]>
     private let renderingConfiguration: PRRenderingConfiguration
+    private let editingConfiguration: PREditingConfiguration
     
-    var body: some _Scene { providerConfiguration }
+    var body: some _Scene {
+        providerConfiguration
+    }
     
     init() {
-        let updatingController = UpdatingController()
-        
         let renderingConfiguration: PRRenderingConfiguration = .init {
-            updatingController
+            DrawingController.shared
         }
         
-        self.updatingController = updatingController
-        providerConfiguration = .init(updatingDelegate: PRUpdater(delegate: updatingController), content: {
+        let editingConfiguration: PREditingConfiguration = .init {
+            EditingController.shared
+        }
+        
+        providerConfiguration = .init(updatingDelegate: UpdateController.shared, content: {
             [renderingConfiguration]
         })
         self.renderingConfiguration = renderingConfiguration
+        self.editingConfiguration = editingConfiguration
         
-        // PRRenderer이 나올 것 같음. 여기서 View 접근해서 addSubview:
+        // PRRenderer이 나옴. 여기서 View 접근해서 addSubview:
         // /System/Library/PrivateFrameworks/PosterBoard.framework/PosterBoard에 Extension 하드코딩 되어 있음
-        _ = renderingConfiguration.sceneDelegate
+        // 아닌듯
+        let sceneDelegate = renderingConfiguration.sceneDelegate
+        print(sceneDelegate)
     }
 }
+
+/*
+ PridePosterExtension.DrawingController
+ PridePosterExtension.EditingController
+ PridePosterExtension.UpdateController
+ */

@@ -39,6 +39,7 @@
 		4F0855E62D53638900EE68E2 /* MapPoster.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapPoster.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = MapPosterExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F2F796A2D53BEE100C2756C /* PosterKitHelper.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = PosterKitHelper.xcframework; sourceTree = "<group>"; };
+		4F2F79AB2D5485A200C2756C /* PosterBoardTweak.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PosterBoardTweak.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -48,6 +49,13 @@
 				Info.plist,
 			);
 			target = 4F0855FA2D5365E600EE68E2 /* MapPosterExtension */;
+		};
+		4F2F79B42D5485A200C2756C /* Exceptions for "PosterBoardTweak" folder in "PosterBoardTweak" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				PosterBoardTweak.h,
+			);
+			target = 4F2F79AA2D5485A200C2756C /* PosterBoardTweak */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -63,6 +71,14 @@
 				4F0856032D5365E600EE68E2 /* Exceptions for "MapPosterExtension" folder in "MapPosterExtension" target */,
 			);
 			path = MapPosterExtension;
+			sourceTree = "<group>";
+		};
+		4F2F79AC2D5485A200C2756C /* PosterBoardTweak */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4F2F79B42D5485A200C2756C /* Exceptions for "PosterBoardTweak" folder in "PosterBoardTweak" target */,
+			);
+			path = PosterBoardTweak;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -83,6 +99,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F2F79A82D5485A200C2756C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +114,7 @@
 			children = (
 				4F0855E82D53638900EE68E2 /* MapPoster */,
 				4F0855FC2D5365E600EE68E2 /* MapPosterExtension */,
+				4F2F79AC2D5485A200C2756C /* PosterBoardTweak */,
 				4F0856092D5368E700EE68E2 /* Frameworks */,
 				4F0855E72D53638900EE68E2 /* Products */,
 			);
@@ -101,6 +125,7 @@
 			children = (
 				4F0855E62D53638900EE68E2 /* MapPoster.app */,
 				4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */,
+				4F2F79AB2D5485A200C2756C /* PosterBoardTweak.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -114,6 +139,16 @@
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4F2F79A62D5485A200C2756C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
 		4F0855E52D53638900EE68E2 /* MapPoster */ = {
@@ -147,6 +182,7 @@
 				4F0855F72D5365E600EE68E2 /* Sources */,
 				4F0855F82D5365E600EE68E2 /* Frameworks */,
 				4F0855F92D5365E600EE68E2 /* Resources */,
+				4FE823A22D54DC73008FD25E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -162,6 +198,30 @@
 			productReference = 4F0855FB2D5365E600EE68E2 /* MapPosterExtension.appex */;
 			productType = "com.apple.product-type.extensionkit-extension";
 		};
+		4F2F79AA2D5485A200C2756C /* PosterBoardTweak */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F2F79B52D5485A200C2756C /* Build configuration list for PBXNativeTarget "PosterBoardTweak" */;
+			buildPhases = (
+				4F2F79A62D5485A200C2756C /* Headers */,
+				4F2F79A72D5485A200C2756C /* Sources */,
+				4F2F79A82D5485A200C2756C /* Frameworks */,
+				4F2F79A92D5485A200C2756C /* Resources */,
+				4F2F79B82D54861000C2756C /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				4F2F79AC2D5485A200C2756C /* PosterBoardTweak */,
+			);
+			name = PosterBoardTweak;
+			packageProductDependencies = (
+			);
+			productName = PosterBoardTweak;
+			productReference = 4F2F79AB2D5485A200C2756C /* PosterBoardTweak.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -176,6 +236,9 @@
 						CreatedOnToolsVersion = 16.2;
 					};
 					4F0855FA2D5365E600EE68E2 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					4F2F79AA2D5485A200C2756C = {
 						CreatedOnToolsVersion = 16.2;
 					};
 				};
@@ -196,6 +259,7 @@
 			targets = (
 				4F0855E52D53638900EE68E2 /* MapPoster */,
 				4F0855FA2D5365E600EE68E2 /* MapPosterExtension */,
+				4F2F79AA2D5485A200C2756C /* PosterBoardTweak */,
 			);
 		};
 /* End PBXProject section */
@@ -215,7 +279,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		4F2F79A92D5485A200C2756C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4F2F79B82D54861000C2756C /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nxcrun simctl spawn booted launchctl debug system/com.apple.PosterBoard --environment PBT_WAIT_FOR_DEBUGGER=1 DYLD_INSERT_LIBRARIES=\"${BUILT_PRODUCTS_DIR}/PosterBoardTweak.framework/PosterBoardTweak\" MallocStackLogging=1 MallocStackLoggingNoCompact=1 NSZombieEnabled=1\n\nxcrun simctl spawn booted launchctl stop com.apple.PosterBoard\n\nPB_CACHE_PATH=\"/Users/pookjw/Library/Developer/CoreSimulator/Devices/31551CF0-F6B2-4867-888B-78472386F4A9/data/Library/Application Support/PRBPosterExtensionDataStore\"\n\nif [[ -d \"${PB_CACHE_PATH}\" ]]; then\n    rm -rf \"${PB_CACHE_PATH}\"\nfi;\n";
+		};
+		4FE823A22D54DC73008FD25E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\nPB_CACHE_PATH=\"/Users/pookjw/Library/Developer/CoreSimulator/Devices/31551CF0-F6B2-4867-888B-78472386F4A9/data/Library/Application Support/PRBPosterExtensionDataStore\"\n\nif [[ -d \"${PB_CACHE_PATH}\" ]]; then\n    rm -rf \"${PB_CACHE_PATH}\"\nfi;\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4F0855E22D53638900EE68E2 /* Sources */ = {
@@ -226,6 +334,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		4F0855F72D5365E600EE68E2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F2F79A72D5485A200C2756C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -369,6 +484,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++23";
 				CODE_SIGN_ENTITLEMENTS = MapPoster/MapPoster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -398,6 +514,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++23";
 				CODE_SIGN_ENTITLEMENTS = MapPoster/MapPoster.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -472,6 +589,70 @@
 			};
 			name = Release;
 		};
+		4F2F79B62D5485A200C2756C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.PosterBoardTweak;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		4F2F79B72D5485A200C2756C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = com.pookjw.PosterBoardTweak;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -498,6 +679,15 @@
 			buildConfigurations = (
 				4F0856052D5365E600EE68E2 /* Debug */,
 				4F0856062D5365E600EE68E2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F2F79B52D5485A200C2756C /* Build configuration list for PBXNativeTarget "PosterBoardTweak" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F2F79B62D5485A200C2756C /* Debug */,
+				4F2F79B72D5485A200C2756C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

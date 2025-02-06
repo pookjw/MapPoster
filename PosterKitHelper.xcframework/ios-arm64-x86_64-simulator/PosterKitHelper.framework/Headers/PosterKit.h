@@ -1,3 +1,3 @@
-#import <PosterKitHelper/PRRenderingDelegate.h>
-#import <PosterKitHelper/PRUpdatingDelegate.h>
+#import <PosterKitHelper/PREditor.h>
+#import <PosterKitHelper/PRRenderer.h>
 #import <PosterKitHelper/PRUpdater.h>

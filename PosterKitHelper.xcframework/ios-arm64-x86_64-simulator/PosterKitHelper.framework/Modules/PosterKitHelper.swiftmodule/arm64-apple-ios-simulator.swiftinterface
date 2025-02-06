@@ -13,10 +13,10 @@ import ExtensionFoundation
 
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "PosterKit", iOS 16.0)
-open class PRRenderingConfiguration: PosterKitHelper._SceneConfiguration {
+public class PRRenderingConfiguration: PosterKitHelper._SceneConfiguration {
     @_silgen_name("$s9PosterKit24PRRenderingConfigurationCyACSo0C8Delegate_pyccfC")
     public init(_ block: () -> PosterKitHelper.PRRenderingDelegate)
-    open var sceneDelegate: UIKit.UISceneDelegate { get }
+    public var sceneDelegate: UIKit.UISceneDelegate { get }
     public final var role: PosterKitHelper._Role { get }
 }
 
@@ -36,8 +36,17 @@ open class PRProviderConfiguration<T>: PosterKitHelper.PRProviderConfigurationPr
 public protocol PRProviderConfigurationProtocol: PosterKitHelper._AppExtensionConfiguration, PosterKitHelper._ConnectionHandler, PosterKitHelper._SceneConfigurationProviding {}
 
 @available(iOS 16.0, *)
+@_originallyDefinedIn(module: "PosterKit", iOS 16.0)
+public class PREditingConfiguration: PosterKitHelper._SceneConfiguration {
+    @_silgen_name("$s9PosterKit22PREditingConfigurationCyACSo0C8Delegate_pyccfC")
+    public init(_ block: () -> PosterKitHelper.PREditingDelegate)
+    public var sceneDelegate: UIKit.UISceneDelegate { get }
+    public final var role: PosterKitHelper._Role { get }
+}
+
+@available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
-@_typeEraser(_AnySceneConfiguration)
+@_typeEraser(PosterKitHelper._AnySceneConfiguration)
 public protocol _SceneConfiguration {
     var sceneDelegate: UIKit.UISceneDelegate { get }
     var role: PosterKitHelper._Role { get }
@@ -45,7 +54,7 @@ public protocol _SceneConfiguration {
 
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
-public struct _AnySceneConfiguration: PosterKitHelper._SceneConfiguration {
+@frozen public struct _AnySceneConfiguration: PosterKitHelper._SceneConfiguration {
     public init<T>(erasing: T) where T: PosterKitHelper._SceneConfiguration
     public var sceneDelegate: UIKit.UISceneDelegate { get }
     public var role: PosterKitHelper._Role { get }
@@ -82,7 +91,7 @@ public struct _EmptySceneConfiguration: PosterKitHelper._SceneConfiguration {
 
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
-@_typeEraser(_AnyViewConfiguration)
+@_typeEraser(PosterKitHelper._AnyViewConfiguration)
 @preconcurrency @_Concurrency.MainActor public protocol _ViewConfiguration {
     associatedtype ViewContent
     var role: PosterKitHelper._Role { get }
@@ -97,6 +106,7 @@ extension PosterKitHelper._ViewConfiguration {
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
 public struct _AnyViewConfiguration: PosterKitHelper._ViewConfiguration, PosterKitHelper._ConnectionHandler {
+    @_silgen_name("$s12ExtensionKit21_AnyViewConfigurationV7erasingACx_tcAA01_dE0RzlufC")
     public init<T>(erasing: T) where T: PosterKitHelper._ViewConfiguration
     public var role: PosterKitHelper._Role { get }
     public var view: Never { get }
@@ -107,12 +117,18 @@ public struct _AnyViewConfiguration: PosterKitHelper._ViewConfiguration, PosterK
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
 @preconcurrency @_Concurrency.MainActor @_functionBuilder public struct _ViewConfigurationBuilder {
-    @_alwaysEmitIntoClient @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> [PosterKitHelper._AnyViewConfiguration] where Content : PosterKitHelper._ViewConfiguration
+    @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> [PosterKitHelper._AnyViewConfiguration] where Content : PosterKitHelper._ViewConfiguration
 }
 
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
-public protocol _ViewConfigurationProviding {
+@preconcurrency @_Concurrency.MainActor @_functionBuilder public struct _SceneConfigurationBuilder {
+    @_Concurrency.MainActor @preconcurrency public static func buildBlock<Content>(_ content: Content) -> [PosterKitHelper._AnySceneConfiguration] where Content : PosterKitHelper._SceneConfiguration
+}
+
+@available(iOS 16.0, *)
+@_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
+@preconcurrency @_Concurrency.MainActor public protocol _ViewConfigurationProviding {
     var content: PosterKitHelper._ViewConfigurationGroup { get }
 }
 
@@ -144,7 +160,7 @@ public struct _ContentViewScene {
 
 @available(iOS 16.0, *)
 @_originallyDefinedIn(module: "ExtensionKit", iOS 16.0)
-@_typeEraser(_AnyViewScene)
+@_typeEraser(PosterKitHelper._AnyViewScene)
 public protocol _ViewScene {
     associatedtype Body: SwiftUI.View
     var body: Body { get }
